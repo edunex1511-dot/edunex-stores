@@ -16,7 +16,7 @@
       lede_home: 'Please use the download link you were given.',
       s1t: 'Download', s1d: 'Tap the APK for your app below.',
       s2t: 'Allow installs', s2d: 'Android will ask to allow installs from this source once.',
-      s3t: 'Install / update', s3d: 'Open the file. Installing over an existing app updates it and keeps your data.',
+      s3t: 'Install / update', s3d: 'If Chrome asks “Keep file?”, tap Keep. Then open the file. Installing over an existing app updates it and keeps your data.',
       secApk: 'Android apps',
       secWeb: 'Teacher web app',
       teacher: 'Teacher App', student: 'Student App',
@@ -53,7 +53,7 @@
       lede_home: 'من فضلك استخدم رابط التحميل الذي وصلك.',
       s1t: 'التحميل', s1d: 'اضغط على ملف APK الخاص بتطبيقك في الأسفل.',
       s2t: 'السماح بالتثبيت', s2d: 'سيطلب منك أندرويد السماح بالتثبيت من هذا المصدر مرة واحدة.',
-      s3t: 'التثبيت / التحديث', s3d: 'افتح الملف. التثبيت فوق التطبيق الحالي يحدّثه ويحتفظ ببياناتك.',
+      s3t: 'التثبيت / التحديث', s3d: 'إذا سألك Chrome «الاحتفاظ بالملف؟» اضغط «احتفظ». ثم افتح الملف. التثبيت فوق التطبيق الحالي يحدّثه ويحتفظ ببياناتك.',
       secApk: 'تطبيقات أندرويد',
       secWeb: 'تطبيق المعلم على الويب',
       teacher: 'تطبيق المعلم', student: 'تطبيق الطالب',
@@ -160,12 +160,16 @@
     webCard = web.querySelector('.card');
   }
 
-  function setBtn(card, cls, icon, text, href){
+  // sameTab: APK downloads stay in this tab so Chrome's "keep file?" prompt isn't lost
+  // when a new tab closes itself right after the download starts.
+  function setBtn(card, cls, icon, text, href, sameTab){
     var btn = card.querySelector('.btn');
     btn.className = 'btn ' + cls;
     btn.innerHTML = icon + ' ' + esc(text);
     if (href){
-      btn.href = href; btn.target = '_blank'; btn.rel = 'noopener'; btn.removeAttribute('tabindex');
+      btn.href = href; btn.removeAttribute('tabindex');
+      if (sameTab){ btn.removeAttribute('target'); btn.removeAttribute('rel'); }
+      else { btn.target = '_blank'; btn.rel = 'noopener'; }
     } else {
       btn.href = '#'; btn.removeAttribute('target'); btn.setAttribute('tabindex', '-1');
     }
@@ -194,7 +198,7 @@
       var sub = parts.filter(Boolean).join(' · ');
       if (sha) sub += ' · <a class="sha" dir="ltr" href="https://github.com/edunex1511-dot/edunex-flutter/commit/' + sha + '" target="_blank" rel="noopener">' + sha + '</a>';
       body.innerHTML = '<div class="build-version" dir="ltr">' + esc(r.name || r.tag_name) + '</div><div class="build-sub">' + sub + '</div>';
-      if (asset) setBtn(card, 'btn-primary', iconDownload, t('dlApk'), asset.browser_download_url);
+      if (asset) setBtn(card, 'btn-primary', iconDownload, t('dlApk'), asset.browser_download_url, true);
       else { body.innerHTML = '<p class="empty-state">' + esc(t('noBuild')) + '</p>'; setBtn(card, 'btn-disabled', iconDownload, t('notYet')); }
     }
   }
