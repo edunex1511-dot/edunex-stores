@@ -9,9 +9,9 @@ Publishing a new release under the same tag updates the page automatically.
 Users install the new APK over the old one (same package name + signing key) to update.
 
 ## Private page URLs
-The dev and prod pages live at unguessable paths and are not linked from anywhere:
+The dev and prod pages live at paths that are not linked from anywhere:
 
-- Prod: `/p-2840690b67132603/`
-- Dev: `/d-3fb5d029e78bb722/`
+- Prod: `/eg_edunex/`
+- Dev: `/dev_hub_7k3q/`
 
 Share only the matching link. `index.html` is a blank landing page and `robots` meta tags ask search engines not to index. `config.json` holds the teacher web URLs (edit only this to change them).
