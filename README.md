@@ -15,3 +15,6 @@ The dev and prod pages live at paths that are not linked from anywhere:
 - Dev: `/dev_hub_7k3q/`
 
 Share only the matching link. `index.html` is a blank landing page and `robots` meta tags ask search engines not to index. `config.json` holds the teacher web URLs (edit only this to change them).
+
+## Languages
+Every page is bilingual (English / العربية). The language follows the visitor's phone language by default, and a button at the top switches it (the choice is remembered). Texts live in `app.js` (the `T` object).
