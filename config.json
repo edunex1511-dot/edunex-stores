@@ -1,0 +1,4 @@
+{
+  "dev":  { "teacherWebUrl": "" },
+  "prod": { "teacherWebUrl": "" }
+}
