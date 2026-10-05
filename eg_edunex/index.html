@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EDUNEX Production Builds</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body data-env="prod">
@@ -15,28 +15,27 @@
     <div class="brand">
       <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 13h16M4 13l3.5-6M4 13l3.5 6M20 13l-3.5-6M20 13l-3.5 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <span class="brand-name">EDUNEX</span>
+      <button class="lang-btn" id="lang-btn" type="button" aria-label="Language / اللغة">العربية</button>
     </div>
-    <h1>Production builds</h1>
-    <p class="lede">Stable production APKs for the teacher and student apps, plus the teacher production web link. Bookmark this page — when an update is released, come back here and install the new APK over the old one.</p>
+    <h1 id="page-h1"></h1>
+    <p class="lede" id="page-lede"></p>
   </div>
 
   <div class="steps">
-    <div class="step"><span class="step-no">01</span><div><p><strong>Download</strong>Tap the APK for your app below.</p></div></div>
-    <div class="step"><span class="step-no">02</span><div><p><strong>Allow installs</strong>Android will ask to allow installs from this source once.</p></div></div>
-    <div class="step"><span class="step-no">03</span><div><p><strong>Install / update</strong>Open the file. Installing over an existing app updates it and keeps your data.</p></div></div>
+    <div class="step"><span class="step-no">01</span><div><p><strong data-i18n="s1t"></strong><span data-i18n="s1d"></span></p></div></div>
+    <div class="step"><span class="step-no">02</span><div><p><strong data-i18n="s2t"></strong><span data-i18n="s2d"></span></p></div></div>
+    <div class="step"><span class="step-no">03</span><div><p><strong data-i18n="s3t"></strong><span data-i18n="s3d"></span></p></div></div>
   </div>
 
   <div id="app-sections"></div>
 
   <footer>
     <div class="footer-row">
-      <p id="last-checked">Checking GitHub…</p>
+      <p id="last-checked"></p>
       <button class="refresh-btn" id="refresh-btn" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 11a8 8 0 1 0-2.2 5.6M20 5v6h-6"/></svg>
-        Refresh
-      </button>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 11a8 8 0 1 0-2.2 5.6M20 5v6h-6"/></svg> <span data-i18n="refresh"></span></button>
     </div>
-    <p>iOS builds aren't distributed this way yet. Admin panel stays web-only.</p>
+    <p data-i18n="footer"></p>
   </footer>
 </div>
 <script src="../app.js"></script>

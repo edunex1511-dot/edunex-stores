@@ -178,3 +178,11 @@
 .choose .card{text-decoration:none;min-height:150px;justify-content:space-between}
 .choose h2{margin:0;font-size:20px}
 .choose p{margin:0;font-size:13.5px;color:var(--text-muted);line-height:1.5}
+
+/* language toggle + RTL */
+.lang-btn{margin-inline-start:auto;font:inherit;font-size:12.5px;font-weight:700;color:var(--accent-strong);background:none;border:1px solid var(--border);padding:6px 12px;border-radius:999px;cursor:pointer}
+.lang-btn:hover{border-color:var(--accent)}
+:root[lang="ar"] body{font-family:'Cairo','Plus Jakarta Sans',system-ui,sans-serif}
+:root[lang="ar"] .brand-name,:root[lang="ar"] .pill{letter-spacing:0}
+.refresh-btn svg{flex:none}
+#app-sections{display:flex;flex-direction:column;gap:40px}
