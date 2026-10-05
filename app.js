@@ -83,7 +83,7 @@
     var card = document.getElementById('web-card');
     var body = card.querySelector('.card-body');
     var btn = card.querySelector('.btn');
-    fetch('config.json', { cache: 'no-store' }).then(function(r){
+    fetch('../config.json', { cache: 'no-store' }).then(function(r){
       if (!r.ok) throw new Error(r.status);
       return r.json();
     }).then(function(cfg){
