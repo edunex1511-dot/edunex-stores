@@ -1,4 +1,4 @@
 {
-  "dev":  { "teacherWebUrl": "https://teachersedunex-git-dev-edunex2.vercel.app/" },
-  "prod": { "teacherWebUrl": "https://teachersedunex.vercel.app/" }
+  "dev":  { "teacherWebUrl": "https://dev-teacher.egedunex.com/" },
+  "prod": { "teacherWebUrl": "https://teacher.egedunex.com/" }
 }
