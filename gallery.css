@@ -1,0 +1,21 @@
+/* link cards (prod chooser) */
+a.card{text-decoration:none;color:inherit;justify-content:space-between}
+a.card:hover{border-color:var(--accent)}
+a.card h2{margin:0 0 6px;font-size:18px}
+a.card p{margin:0;font-size:13.5px;color:var(--text-muted);line-height:1.5}
+a.card .btn{pointer-events:none}
+
+/* screenshots */
+.shots{display:flex;flex-direction:column;gap:12px}
+.shots-title{margin:0;font-size:14px;font-weight:700;color:var(--text-muted)}
+.shots-strip{display:flex;gap:14px;overflow-x:auto;padding-block:4px 10px;scroll-snap-type:x proximity}
+.shot{
+  flex:none;scroll-snap-align:start;display:block;background:var(--surface);
+  border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);
+}
+.shot:hover{border-color:var(--accent)}
+.shot img{display:block;height:100%;width:100%;object-fit:cover}
+.shots-strip.tall .shot{width:170px;aspect-ratio:9/19.5}
+.shots-strip.wide .shot{width:min(420px,80vw);aspect-ratio:4/3}
+footer>p{margin:0;font-size:12px;color:var(--text-muted)}
+#app-sections{display:flex;flex-direction:column;gap:40px}

@@ -13,44 +13,8 @@
     --danger:#A23B33;
     --danger-soft:#FBEAE8;
     --shadow:0 1px 2px rgba(15,26,23,.04), 0 8px 24px rgba(15,26,23,.06);
+    color-scheme:light;
   }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      color-scheme:dark;
-      --bg:#0F1A17;
-      --surface:#16241F;
-      --surface-2:#1B2C26;
-      --border:#28382F;
-      --text:#F2FBF8;
-      --text-muted:#93B2A8;
-      --accent:#1FB89B;
-      --accent-strong:#7FE3CF;
-      --accent-soft:rgba(31,184,155,.14);
-      --warn:#FFB43D;
-      --warn-soft:rgba(255,180,61,.14);
-      --danger:#FF8A80;
-      --danger-soft:rgba(255,138,128,.14);
-      --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
-    }
-  }
-  :root[data-theme="dark"]{
-    color-scheme:dark;
-    --bg:#0F1A17;
-    --surface:#16241F;
-    --surface-2:#1B2C26;
-    --border:#28382F;
-    --text:#F2FBF8;
-    --text-muted:#93B2A8;
-    --accent:#1FB89B;
-    --accent-strong:#7FE3CF;
-    --accent-soft:rgba(31,184,155,.14);
-    --warn:#FFB43D;
-    --warn-soft:rgba(255,180,61,.14);
-    --danger:#FF8A80;
-    --danger-soft:rgba(255,138,128,.14);
-    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
-  }
-
   *{box-sizing:border-box}
   body{
     background:var(--bg);
@@ -184,5 +148,5 @@
 .lang-btn:hover{border-color:var(--accent)}
 :root[lang="ar"] body{font-family:'Cairo','Plus Jakarta Sans',system-ui,sans-serif}
 :root[lang="ar"] .brand-name,:root[lang="ar"] .pill{letter-spacing:0}
-.refresh-btn svg{flex:none}
-#app-sections{display:flex;flex-direction:column;gap:40px}
+
+

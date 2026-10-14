@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EDUNEX Dev Builds</title>
+<title>EDUNEX Stores</title>
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png">
@@ -12,8 +12,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../gallery.css">
 </head>
-<body data-env="dev">
+<body data-page="dev">
 <div class="wrap">
   <div class="head">
     <div class="brand">
@@ -24,24 +25,15 @@
     <h1 id="page-h1"></h1>
     <p class="lede" id="page-lede"></p>
   </div>
-
-  <div class="steps">
-    <div class="step"><span class="step-no">01</span><div><p><strong data-i18n="s1t"></strong><span data-i18n="s1d"></span></p></div></div>
-    <div class="step"><span class="step-no">02</span><div><p><strong data-i18n="s2t"></strong><span data-i18n="s2d"></span></p></div></div>
-    <div class="step"><span class="step-no">03</span><div><p><strong data-i18n="s3t"></strong><span data-i18n="s3d"></span></p></div></div>
-  </div>
-
   <div id="app-sections"></div>
-
-  <footer>
-    <div class="footer-row">
-      <p id="last-checked"></p>
-      <button class="refresh-btn" id="refresh-btn" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 11a8 8 0 1 0-2.2 5.6M20 5v6h-6"/></svg> <span data-i18n="refresh"></span></button>
-    </div>
-    <p data-i18n="footer"></p>
-  </footer>
+  <footer id="page-footer"></footer>
 </div>
-<script src="../app.js"></script>
+<script src="../js/strings.js"></script>
+<script src="../js/core.js"></script>
+<script src="../js/apk-card.js"></script>
+<script src="../js/web-card.js"></script>
+<script src="../js/gallery.js"></script>
+<script src="../js/pages.js"></script>
+<script src="../js/page.js"></script>
 </body>
 </html>
