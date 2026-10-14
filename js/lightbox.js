@@ -1,5 +1,7 @@
 (function(ns){
   var SWIPE_MIN_PX = 50;
+  // Browsers without <dialog> (older iOS/Android WebViews) get the same markup as a fixed overlay.
+  var hasNativeDialog = typeof HTMLDialogElement === 'function';
   var dialog, image, counter, items = [], index = 0, swipeStartX = null;
 
   function chevron(path){
@@ -23,6 +25,7 @@
     dialog.addEventListener('pointerdown', function(e){ swipeStartX = e.clientX; });
     dialog.addEventListener('pointerup', onSwipeEnd);
     dialog.addEventListener('close', function(){ document.body.style.overflow = ''; });
+    dialog.tabIndex = -1;
   }
 
   function isRtl(){ return document.documentElement.dir === 'rtl'; }
@@ -41,13 +44,20 @@
   function onClick(e){
     var button = e.target.closest('[data-act]');
     var act = button ? button.getAttribute('data-act') : (e.target === image ? null : 'close');
-    if (act === 'close') dialog.close();
+    if (act === 'close') closeDialog();
     else if (act === 'prev') show(index - 1);
     else if (act === 'next') show(index + 1);
   }
 
+  function closeDialog(){
+    if (hasNativeDialog){ dialog.close(); return; }
+    dialog.removeAttribute('open');
+    document.body.style.overflow = '';
+  }
+
   // "Next" follows reading direction: right arrow in LTR, left arrow in RTL.
   function onKey(e){
+    if (e.key === 'Escape') return closeDialog();
     if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
     var forward = (e.key === 'ArrowRight') !== isRtl();
     show(index + (forward ? 1 : -1));
@@ -73,6 +83,8 @@
     dialog.querySelector('.lb-next').setAttribute('aria-label', ns.t('lbNext'));
     show(startIndex);
     document.body.style.overflow = 'hidden';
-    dialog.showModal();
+    if (hasNativeDialog) dialog.showModal();
+    else dialog.setAttribute('open', '');
+    dialog.querySelector('.lb-close').focus();
   };
 })(window.Edunex = window.Edunex || {});
