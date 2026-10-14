@@ -1,13 +1,14 @@
 (function(ns){
   // Declarative page layouts. Each group renders a heading, a card grid (`items`)
   // and optional screenshot galleries (`galleries`).
+  // A group's optional `app` lets a page be filtered with ?app=<name> (used by the landing page links).
   // items: { apk: app } | { web: app } | { link: href, title, desc }
   ns.PAGES = {
     home: { groups: [] },
     dev: { env: 'dev', steps: true, footer: 'footerApk', groups: [
-      { title: 'grpStudent', badge: 'S', items: [{ apk: 'student' }] },
-      { title: 'grpTeacher', badge: 'T', items: [{ apk: 'teacher' }, { web: 'teacher' }] },
-      { title: 'grpAdmin', badge: 'A', items: [{ web: 'admin' }] }
+      { app: 'student', title: 'grpStudent', badge: 'S', items: [{ apk: 'student' }] },
+      { app: 'teacher', title: 'grpTeacher', badge: 'T', items: [{ apk: 'teacher' }, { web: 'teacher' }] },
+      { app: 'admin', title: 'grpAdmin', badge: 'A', items: [{ web: 'admin' }] }
     ] },
     student: { env: 'prod', steps: true, footer: 'footerApk', groups: [
       { title: 'secApk', badge: 'APK', items: [{ apk: 'student' }] },
