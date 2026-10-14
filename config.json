@@ -1,15 +1,35 @@
 {
-  "dev":  {
-    "teacherWebUrl": "https://teachersedunex-git-dev-edunex2.vercel.app/",
+  "dev": {
+    "teacherWebUrl": "https://dev-teacher.egedunex.com",
     "adminWebUrl": "https://dev-admin.egedunex.com"
   },
   "prod": {
-    "teacherWebUrl": "https://teachersedunex.vercel.app/",
+    "teacherWebUrl": "https://teacher.egedunex.com",
     "adminWebUrl": "https://admin.egedunex.com"
   },
   "screenshots": {
-    "student": [],
-    "teacher-app": [],
-    "teacher-web": []
+    "student": [
+      "student-1.jpg",
+      "student-2.jpg",
+      "student-3.jpg",
+      "student-4.jpg",
+      "student-5.jpg",
+      "student-6.jpg",
+      "student-7.jpg",
+      "student-8.jpg"
+    ],
+    "teacher-app": [
+      "teacher-1.jpg",
+      "teacher-2.jpg",
+      "teacher-3.jpg",
+      "teacher-4.jpg",
+      "teacher-5.jpg",
+      "teacher-6.jpg"
+    ],
+    "teacher-web": [
+      "web-1.jpg",
+      "web-2.jpg",
+      "web-3.jpg"
+    ]
   }
 }
