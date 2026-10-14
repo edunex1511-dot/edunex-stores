@@ -12,9 +12,9 @@ Paths are not linked from anywhere; share only the matching link.
 
 | Path | What it holds |
 | --- | --- |
-| `/student_app/` | Student app (prod) APK + screenshots |
-| `/teacher_app/` | Teacher app (prod) APK, teacher web link, app + web screenshots |
-| `/admin_panel/` | Admin panel (prod) web link |
+| `/egedunex-student/` | Student app (prod) APK + screenshots |
+| `/egedunex-teacher/` | Teacher app (prod) APK, teacher web link, app + web screenshots |
+| `/egedunex-admin/` | Admin panel (prod) web link |
 | `/dev_hub_7k3q/` | All dev builds: student APK, teacher APK + web, admin panel web |
 | `/eg_edunex/` | Old prod link, now a small chooser to the three prod pages |
 

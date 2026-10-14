@@ -26,9 +26,9 @@
     ] },
     prodHome: { env: 'prod', chooser: true, groups: [
       { items: [
-        { link: '../student_app/', title: 'homeStudent', desc: 'homeStudentDesc' },
-        { link: '../teacher_app/', title: 'homeTeacher', desc: 'homeTeacherDesc' },
-        { link: '../admin_panel/', title: 'homeAdmin', desc: 'homeAdminDesc' }
+        { link: '../egedunex-student/', title: 'homeStudent', desc: 'homeStudentDesc' },
+        { link: '../egedunex-teacher/', title: 'homeTeacher', desc: 'homeTeacherDesc' },
+        { link: '../egedunex-admin/', title: 'homeAdmin', desc: 'homeAdminDesc' }
       ] }
     ] }
   };
