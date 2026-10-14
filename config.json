@@ -1,4 +1,15 @@
 {
-  "dev":  { "teacherWebUrl": "https://teachersedunex-git-dev-edunex2.vercel.app/" },
-  "prod": { "teacherWebUrl": "https://teachersedunex.vercel.app/" }
+  "dev":  {
+    "teacherWebUrl": "https://teachersedunex-git-dev-edunex2.vercel.app/",
+    "adminWebUrl": "https://dev-admin.egedunex.com"
+  },
+  "prod": {
+    "teacherWebUrl": "https://teachersedunex.vercel.app/",
+    "adminWebUrl": "https://admin.egedunex.com"
+  },
+  "screenshots": {
+    "student": [],
+    "teacher-app": [],
+    "teacher-web": []
+  }
 }
