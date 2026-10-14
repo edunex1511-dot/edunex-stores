@@ -5,7 +5,7 @@
   ns.createGallery = function(key, labelKey, appName){
     var node = ns.el('<div class="shots"><h3 class="shots-title" data-i18n="' + labelKey + '"></h3><div class="shots-body"></div></div>');
     var body = node.querySelector('.shots-body');
-    var files = null;
+    var files = null, items = [];
     var layout = /web$/.test(key) ? 'wide' : 'tall';
 
     function render(){
@@ -14,13 +14,18 @@
         body.innerHTML = '<p class="empty-state">' + ns.esc(ns.t('shotsSoon')) + '</p>';
         return;
       }
-      body.innerHTML = '<div class="shots-strip ' + layout + '">' + files.map(function(file, index){
-        var src = SHOTS_DIR + key + '/' + encodeURIComponent(file);
-        var alt = ns.t('shotAlt', { name: ns.t(appName), n: index + 1 });
-        return '<a class="shot" href="' + src + '" target="_blank" rel="noopener">' +
-          '<img src="' + src + '" alt="' + ns.esc(alt) + '" loading="lazy"></a>';
+      items = files.map(function(file, index){
+        return { src: SHOTS_DIR + key + '/' + encodeURIComponent(file), alt: ns.t('shotAlt', { name: ns.t(appName), n: index + 1 }) };
+      });
+      body.innerHTML = '<div class="shots-strip ' + layout + '">' + items.map(function(item, index){
+        return '<button class="shot" type="button" data-index="' + index + '"><img src="' + item.src + '" alt="' + ns.esc(item.alt) + '" loading="lazy"></button>';
       }).join('') + '</div>';
     }
+
+    body.addEventListener('click', function(e){
+      var shot = e.target.closest('.shot');
+      if (shot) ns.openLightbox(items, Number(shot.getAttribute('data-index')));
+    });
 
     function load(){
       return ns.loadConfig().then(function(config){

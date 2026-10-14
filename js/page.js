@@ -88,7 +88,12 @@
   function init(){
     var root = document.getElementById('app-sections');
     if (layout.steps) root.appendChild(ns.el(stepsMarkup()));
-    layout.groups.forEach(function(group){ root.appendChild(buildGroup(group)); });
+    var only = new URLSearchParams(window.location.search).get('app');
+    var hasMatch = layout.groups.some(function(group){ return group.app === only; });
+    layout.groups.forEach(function(group){
+      if (hasMatch && group.app !== only) return;
+      root.appendChild(buildGroup(group));
+    });
     buildFooter();
     document.getElementById('lang-btn').addEventListener('click', function(){
       ns.setLang(ns.lang() === 'ar' ? 'en' : 'ar');
